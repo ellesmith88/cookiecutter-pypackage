@@ -6,7 +6,7 @@
 from setuptools import setup, find_packages
 
 __author__ = """{{ cookiecutter.full_name }}"""
-__contact__ = '{{ cookiecutter.email }}'
+__contact__ = "{{ cookiecutter.email }}"
 __copyright__ = "Copyright 2018 United Kingdom Research and Innovation"
 __license__ = "{{ cookiecutter.open_source_license }}"
 __version__ = "{{ cookiecutter.version }}"
@@ -67,7 +67,6 @@ setup(
     description="{{ cookiecutter.project_short_description }}",
 
     license='BSD - See LICENSE file for details',
-    install_requires=[],
 
     # This qualifier can be used to selectively exclude Python versions -
     # in this case early Python 2 and 3 releases
