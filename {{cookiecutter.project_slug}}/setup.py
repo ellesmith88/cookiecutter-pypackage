@@ -5,11 +5,10 @@
 
 from setuptools import setup, find_packages
 
-__author__ = """{{ cookiecutter.full_name }}"""
+__author__ = "{{ cookiecutter.full_name.replace('\"', '\\\"') }}"
 __contact__ = "{{ cookiecutter.email }}"
 __copyright__ = "Copyright 2018 United Kingdom Research and Innovation"
 __license__ = "{{ cookiecutter.open_source_license }}"
-__version__ = "{{ cookiecutter.version }}"
 
 
 from setuptools import setup, find_packages
@@ -35,8 +34,8 @@ test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest',{%- endif 
 
 
 setup(
-    author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
-    author_email='{{ cookiecutter.email }}',
+    author=__author__,
+    author_email=__contact__,
 
     # See:
     # https://www.python.org/dev/peps/pep-0301/#distutils-trove-classification
@@ -66,7 +65,7 @@ setup(
     ],
     description="{{ cookiecutter.project_short_description }}",
 
-    license='BSD - See LICENSE file for details',
+    license=__license__,
 
     # This qualifier can be used to selectively exclude Python versions -
     # in this case early Python 2 and 3 releases
@@ -91,6 +90,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
-    version='{{ cookiecutter.version }}',
+    version=_package_version,
     zip_safe=False,
 )
