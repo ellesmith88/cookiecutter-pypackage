@@ -19,11 +19,8 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
-
-import {{ cookiecutter.project_slug }}
 from pkg_resources import get_distribution
-
+sys.path.insert(0, os.path.abspath('..'))
 
 
 # -- General configuration ---------------------------------------------
@@ -58,7 +55,7 @@ author = "{{ cookiecutter.full_name }}"
 # the built documents.
 #
 # The short X.Y version.
-release = get_distribution('myproject').version
+release = get_distribution('{{ cookiecutter.project_slug }}').version
 # for example take major/minor
 version = '.'.join(release.split('.')[:2])
 
