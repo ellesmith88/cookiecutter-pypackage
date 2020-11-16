@@ -1,26 +1,38 @@
 # Config file for automatic testing at travis-ci.org
-
 language: python
-python:
-  - 3.8
-  - 3.7
-  - 3.6
-  - 3.5
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox-travis
+branches:
+  only:
+    - master
 
-# command to run tests, e.g. python setup.py test
-script: tox
+jobs:
+  fast_finish: true
+  include:
+    - env:
+        - TOXENV=docs
+        - READTHEDOCS=true
+      name: "Documentation"
+      python: 3.6
+    - env: TOXENV=black
+      name: "Black and flake8 compliance"
+      python: 3.6
+    - env: TOXENV=py38
+      name: "Python3.8 (Linux)"
+      python: 3.8
+    - env: TOXENV=py37
+      name: "Python3.7 (Linux)"
+      python: 3.7
+    - env: TOXENV=py36
+      name: "Python3.6 (Linux)"
+      python: 3.6
 
-# deploy new versions to PyPI
-deploy:
-  provider: pypi
-  distributions: sdist bdist_wheel
-  user: audreyr
-  password:
-    secure: PLEASE_REPLACE_ME
-  on:
-    tags: true
-    repo: audreyr/python_boilerplate
-    python: 3.8
+
+before_install:
+    - printenv
+    - pip install --upgrade pip
+
+install:
+    - pip install -U tox-travis
+
+script: tox -e $TOXENV
+

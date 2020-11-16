@@ -161,9 +161,9 @@ def test_bake_without_author_file(cookies):
             assert 'contributing\n   history' in index_file.read()
 
         # Check that
-        manifest_path = result.project.join('MANIFEST.in')
-        with open(str(manifest_path)) as manifest_file:
-            assert 'AUTHORS.rst' not in manifest_file.read()
+        # manifest_path = result.project.join('MANIFEST.in')
+        # with open(str(manifest_path)) as manifest_file:
+        #     assert 'AUTHORS.rst' not in manifest_file.read()
 
 
 def test_make_help(cookies):

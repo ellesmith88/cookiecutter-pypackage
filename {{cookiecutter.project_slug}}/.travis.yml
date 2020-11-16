@@ -1,23 +1,46 @@
 # Config file for automatic testing at travis-ci.com
-
 language: python
-python:
-  - 3.8
-  - 3.7
-  - 3.6
-  - 3.5
 
-# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox-travis
+branches:
+  only:
+    - master
 
-# Command to run tests, e.g. python setup.py test
-script: tox
+jobs:
+  fast_finish: true
+  include:
+    - env:
+        - TOXENV=docs
+        - READTHEDOCS=true
+      name: "Documentation"
+      python: 3.6
+    - env: TOXENV=black
+      name: "Black and flake8 compliance"
+      python: 3.6
+    - env: TOXENV=py38
+      name: "Python3.8 (Linux)"
+      python: 3.8
+    - env: TOXENV=py37
+      name: "Python3.7 (Linux)"
+      python: 3.7
+    - env: TOXENV=py36
+      name: "Python3.6 (Linux)"
+      python: 3.6
+
+
+before_install:
+    - printenv
+    - pip install --upgrade pip
+
+install:
+    - pip install -U tox-travis
+
+script: tox -e $TOXENV
 
 {% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
 # Assuming you have installed the travis-ci CLI tool, after you
 # create the Github repo and add it to Travis, run the
 # following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password
+# $ travis encrypt --add deploy.password --com
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
