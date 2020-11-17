@@ -52,6 +52,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Topic :: Security',
         'Topic :: Internet',
         'Topic :: Scientific/Engineering',
@@ -68,9 +69,7 @@ setup(
     },
     {%- endif %}
     install_requires=requirements,
-{%- if cookiecutter.open_source_license in license_classifiers %}
-    license=__license__,,
-{%- endif %}
+    license=__license__,
     long_description=readme,
     long_description_content_type="text/x-rst",
     include_package_data=True,
