@@ -65,8 +65,8 @@ Then:
 * Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``)
 * You can enable pre-commit using `pre-commit install` which will check the formatting of your files before committing.
   Note: This should not be relied upon and flake8 and black are tested in Travis-CI as part of this cookiecutter.
-* Add a `requirements.txt` file that specifies the packages you will need for
-  your project and their versions. For more info see the `pip docs for requirements files`_.  
+* Add to the `requirements.txt` file that specifies the packages you will need for
+  your project and their versions. For more info see the `pip docs for requirements files`_.
 * Then follow the instructions to add your code to the empty git repository
 * Register_ your project with PyPI.
 * Run the Travis CLI command `travis encrypt --add deploy.password --com` to encrypt your PyPI password in Travis config
