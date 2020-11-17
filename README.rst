@@ -59,14 +59,14 @@ Then:
 
 * Create a repo and put it there.
 * Add the repo to your Travis-CI_ account.
+* You can enable pre-commit using `pre-commit install` which will check the formatting of your files before committing.
+  Note: This should not be relied upon and flake8 and black are tested in Travis-CI as part of this cookiecutter.
 * Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``)
 * Register_ your project with PyPI.
 * Run the Travis CLI command `travis encrypt --add deploy.password --com` to encrypt your PyPI password in Travis config
   and activate automated deployment on PyPI when you push a new tag to master branch.
 * Add the repo to your `Read the Docs`_ account + turn on the Read the Docs service hook.
-* You can enable pre-commit using `pre-commit install` which will check the formatting of your files before committing.
-  Note: This should not be relied upon and flake8 and black are tested in Travis-CI as part of this cookiecutter.
-* Add a `requirements.txt` file that specifies the packages you will need for
+* Add to the `requirements.txt` file that specifies the packages you will need for
   your project and their versions. For more info see the `pip docs for requirements files`_.
 * Release your package by pushing a new tag to master.
 * Activate your project on `pyup.io`_.
