@@ -1,4 +1,5 @@
-# python_package_template
+Python package template
+-----------------------
 
 Template with high-level guidelines for making new CEDA Python packages
 
@@ -6,7 +7,8 @@ Also includes a sample Sphinx documentation in ``docs/`` directory.  Run
 ``make`` in that directory to see a list of targets.  Further instructions are
 in ``docs/index.rst``.
 
-## Based on Cookiecutter package
+Based on Cookiecutter package
+-----------------------------
 
 This was originally a fork of the `Cookiecutter PyPackage` that gets used as
 the template for a new package:
@@ -29,20 +31,11 @@ Features
 
  * Testing setup with ``unittest`` and ``python setup.py test`` or ``py.test``
  * Travis-CI_: Ready for Travis Continuous Integration testing
- * Tox_ testing: Setup to easily test for Python 3.5, 3.6, 3.7
+ * Tox_ testing: Setup to easily test for Python 3.6, 3.7, 3.8
  * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
  * Auto-release to PyPI_ when you push a new tag to master (optional)
  * Command line interface using Click or ArgParse (optional)
 
-
-Build Status
--------------
-
-Linux:
-
-.. image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
-    :alt: Linux build status on Travis CI
 
 Quickstart
 ----------
