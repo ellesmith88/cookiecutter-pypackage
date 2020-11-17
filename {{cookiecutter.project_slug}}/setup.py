@@ -4,6 +4,11 @@
 
 from setuptools import setup, find_packages
 
+__author__ = "{{ cookiecutter.full_name.replace('\"', '\\\"') }}"
+__contact__ = "{{ cookiecutter.email }}"
+__copyright__ = "Copyright 2020 United Kingdom Research and Innovation"
+__license__ = "{{ cookiecutter.open_source_license }}"
+
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
@@ -24,32 +29,35 @@ docs_requirements = [
     "jupyter_client"
 ]
 
-{%- set license_classifiers = {
-    'MIT license': 'License :: OSI Approved :: MIT License',
-    'BSD license': 'License :: OSI Approved :: BSD License',
-    'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
-    'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
-    'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
-} %}
-
 setup(
-    author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
-    author_email='{{ cookiecutter.email }}',
+    author=__author__,
+    author_email=__contact__,
     python_requires='>=3.6',
     setup_requires = ['setuptools_scm'],
     use_scm_version=True,
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 5 - Production/Stable',
+        'Environment :: Console',
+        'Environment :: Web Environment',
+        'Intended Audience :: End Users/Desktop',
         'Intended Audience :: Developers',
-{%- if cookiecutter.open_source_license in license_classifiers %}
-        '{{ license_classifiers[cookiecutter.open_source_license] }}',
-{%- endif %}
+        'Intended Audience :: System Administrators',
+        'Intended Audience :: Science/Research',
+        'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
+        'Operating System :: Microsoft :: Windows',
+        'Operating System :: POSIX :: Linux',
+        'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
+        'Topic :: Security',
+        'Topic :: Internet',
+        'Topic :: Scientific/Engineering',
+        'Topic :: System :: Distributed Computing',
+        'Topic :: System :: Systems Administration :: Authentication/Directory',
+        'Topic :: Software Development :: Libraries :: Python Modules'
     ],
     description="{{ cookiecutter.project_short_description }}",
     {%- if 'no' not in cookiecutter.command_line_interface|lower %}
@@ -61,9 +69,10 @@ setup(
     {%- endif %}
     install_requires=requirements,
 {%- if cookiecutter.open_source_license in license_classifiers %}
-    license="{{ cookiecutter.open_source_license }}",
+    license=__license__,,
 {%- endif %}
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
+    long_description_content_type="text/x-rst",
     include_package_data=True,
     keywords='{{ cookiecutter.project_slug }}',
     name='{{ cookiecutter.project_slug }}',
