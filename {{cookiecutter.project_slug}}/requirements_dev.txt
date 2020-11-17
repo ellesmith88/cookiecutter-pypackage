@@ -8,7 +8,6 @@ coverage==4.5.4
 Sphinx==1.8.5
 twine==1.14.0
 pre-commit==2.8.2
-travis-encrypt==1.4.0
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
 Click==7.0{% endif %}
 {% if cookiecutter.use_pytest == 'y' -%}

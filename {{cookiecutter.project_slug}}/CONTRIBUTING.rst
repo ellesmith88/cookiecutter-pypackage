@@ -126,4 +126,5 @@ Then run::
 
 $ git tag <tagname>
 
+Where the tag name is the raw version e.g. 0.1.0
 Travis will then deploy to PyPI if tests pass.
