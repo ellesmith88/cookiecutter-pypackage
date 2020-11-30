@@ -63,7 +63,6 @@ Then:
 * Add to the ``requirements.txt`` file that specifies the packages you will need for
   your project and their versions.
 * Then follow the instructions on github to add your code to the empty git repository.
-* Register your project with PyPI.
 * To encrypt your PyPI password in the Travis config:
 
     - Install travis following these instructions: https://github.com/travis-ci/travis.rb#installation
