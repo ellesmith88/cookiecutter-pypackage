@@ -70,8 +70,13 @@ Then:
   your project and their versions. For more info see the `pip docs for requirements files`_.
 * Then follow the instructions to add your code to the empty git repository
 * Register_ your project with PyPI.
-* Run the Travis CLI command `travis encrypt --add deploy.password --com` to encrypt your PyPI password in Travis config
-  and activate automated deployment on PyPI when you push a new tag to master branch.
+* To encrypt your PyPI password in the Travis config:
+- Install travis following these instructions: https://github.com/travis-ci/travis.rb#installation
+- Create an api access token on github which as access to everything listed here:
+https://docs.travis-ci.com/user/github-oauth-scopes
+- Run `travis login -—pro -—github-token=<your-token>`
+- Run the Travis CLI command `travis encrypt --add deploy.password --com <your-password>` to encrypt your PyPI password
+in Travis config and activate automated deployment on PyPI when you push a new tag to master branch.
 * Add the repo to your `Read the Docs`_ account + turn on the Read the Docs service hook.
 
 * Release your package by pushing a new tag to master.

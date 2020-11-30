@@ -17,6 +17,8 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [line.strip() for line in open("requirements.txt")]
 
+dev_requirements = [line.strip() for line in open("requirements_dev.txt")]
+
 test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest>=3',{%- endif %} ]
 
 docs_requirements = [
@@ -78,7 +80,8 @@ setup(
     packages=find_packages(include=['{{ cookiecutter.project_slug }}', '{{ cookiecutter.project_slug }}.*']),
     test_suite='tests',
     tests_require=test_requirements,
-    extras_require={"docs": docs_requirements},
+    extras_require={"docs": docs_requirements,
+                    "dev": dev_requirements},
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
     zip_safe=False,
 )
