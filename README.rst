@@ -65,6 +65,7 @@ Then:
 * Then follow the instructions to add your code to the empty git repository
 * Register your project with PyPI.
 * To encrypt your PyPI password in the Travis config:
+
     - Install travis following these instructions: https://github.com/travis-ci/travis.rb#installation
     - Create an api access token on github which as access to everything listed here: https://docs.travis-ci.com/user/github-oauth-scopes
     - Run `travis login -—pro -—github-token=<your-token>`
