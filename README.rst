@@ -58,22 +58,22 @@ Then:
 * Create a repo on github with no extras (License, README etc.).
 * Add the repo to your Travis-CI account.
 * Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``)
-* You can enable pre-commit using `pre-commit install` which will check the formatting of your files before committing.
-  Note: This should not be relied upon and flake8 and black are tested in Travis-CI as part of this cookiecutter.
-* Add to the `requirements.txt` file that specifies the packages you will need for
-  your project and their versions. For more info see the `pip docs for requirements files`.
-* Then follow the instructions to add your code to the empty git repository
+* You can enable pre-commit with the command ``pre-commit install`` which will check the formatting of your files before committing.
+  Note: This should not be relied upon and ``flake8`` and ``black`` are tested in Travis-CI as part of this cookiecutter.
+* Add to the ``requirements.txt`` file that specifies the packages you will need for
+  your project and their versions. .
+* Then follow the instructions on github to add your code to the empty git repository.
 * Register your project with PyPI.
 * To encrypt your PyPI password in the Travis config:
 
     - Install travis following these instructions: https://github.com/travis-ci/travis.rb#installation
     - Create an api access token on github which as access to everything listed here: https://docs.travis-ci.com/user/github-oauth-scopes
-    - Run `travis login -—pro -—github-token=<your-token>`
-    - Run the Travis CLI command `travis encrypt --add deploy.password --com <your-password>` to encrypt your PyPI password in the Travis config and activate automated deployment on PyPI when you push a new tag to master branch.
-* Add the repo to your `Read the Docs` account + turn on the Read the Docs service hook.
+    - Run ``travis login -—pro -—github-token=<your-token>``
+    - Run the Travis CLI command ``travis encrypt --add deploy.password --com <your-password>`` to encrypt your PyPI password in the Travis config and activate automated deployment on PyPI when you push a new tag to master branch.
+* Add the repo to your ``Read the Docs`` account + turn on the Read the Docs service hook.
 
 * Release your package by pushing a new tag to master.
-* Activate your project on `pyup.io`.
+* Activate your project on ``pyup.io``.
 
 .. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
 .. _Register: https://packaging.python.org/tutorials/packaging-projects/#uploading-the-distribution-archives
