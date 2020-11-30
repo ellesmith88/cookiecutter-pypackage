@@ -71,7 +71,8 @@ Then:
     - Run the Travis CLI command ``travis encrypt --add deploy.password --com <your-password>`` to encrypt your PyPI password in the Travis config and activate automated deployment on PyPI when you push a new tag to master branch.
 * Add the repo to your ``Read the Docs`` account + turn on the Read the Docs service hook. To do this go to admin on Read the Docs. Under Advanced settings enable the ``Build pull requests for this project`` option.
 
-* Release your package by pushing a new tag to master::
+* Release your package by pushing a new tag to master (e.g. tagname = 0.1.0)::
+
     $ git tag <tagname>
     $ git push origin <tagname>
 
