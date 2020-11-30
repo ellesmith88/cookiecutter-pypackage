@@ -49,7 +49,7 @@ Generate a Python package project::
 
     cookiecutter https://github.com/cedadev/cookiecutter-pypackage.git
 
-cd to the new directory and initialise a git repository here: 
+cd to the new directory and initialise a git repository here:: 
     
     $ git init
 
@@ -65,10 +65,10 @@ Then:
 * Then follow the instructions to add your code to the empty git repository
 * Register your project with PyPI.
 * To encrypt your PyPI password in the Travis config:
-- Install travis following these instructions: https://github.com/travis-ci/travis.rb#installation
-- Create an api access token on github which as access to everything listed here: https://docs.travis-ci.com/user/github-oauth-scopes
-- Run `travis login -—pro -—github-token=<your-token>`
-- Run the Travis CLI command `travis encrypt --add deploy.password --com <your-password>` to encrypt your PyPI password in the Travis config and activate automated deployment on PyPI when you push a new tag to master branch.
+    - Install travis following these instructions: https://github.com/travis-ci/travis.rb#installation
+    - Create an api access token on github which as access to everything listed here: https://docs.travis-ci.com/user/github-oauth-scopes
+    - Run `travis login -—pro -—github-token=<your-token>`
+    - Run the Travis CLI command `travis encrypt --add deploy.password --com <your-password>` to encrypt your PyPI password in the Travis config and activate automated deployment on PyPI when you push a new tag to master branch.
 * Add the repo to your `Read the Docs` account + turn on the Read the Docs service hook.
 
 * Release your package by pushing a new tag to master.
@@ -84,4 +84,4 @@ For more details, see the `cookiecutter-pypackage tutorial`_.
 For more details of the original package (not the CEDA fork), see the
 `cookiecutter-pypackage tutorial`:
 
- https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html
+https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html
