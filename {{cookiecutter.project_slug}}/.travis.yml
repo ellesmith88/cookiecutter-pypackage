@@ -44,6 +44,8 @@ script: tox -e $TOXENV
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
+  skip_cleanup: true
+  skip_existing: true
   user: {{ cookiecutter.pypi_username }}
   password:
     secure: PLEASE_REPLACE_ME
