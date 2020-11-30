@@ -30,10 +30,10 @@ Features
 --------
 
  * Testing setup with ``unittest`` and ``python setup.py test`` or ``py.test``
- * Travis-CI_: Ready for Travis Continuous Integration testing
- * Tox_ testing: Setup to easily test for Python 3.6, 3.7, 3.8
- * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
- * Auto-release to PyPI_ when you push a new tag to master (optional)
+ * Travis-CI: Ready for Travis Continuous Integration testing
+ * Tox testing: Setup to easily test for Python 3.6, 3.7, 3.8
+ * Sphinx docs: Documentation ready for generation with, for example, ReadTheDocs_
+ * Auto-release to PyPI when you push a new tag to master (optional)
  * Command line interface using Click or ArgParse (optional)
 
 
@@ -48,9 +48,9 @@ Cookiecutter 1.4.0 or higher)::
 Generate a Python package project::
 
     cookiecutter https://github.com/cedadev/cookiecutter-pypackage.git
-    (It may be more appropriate to use the name cedadev instead of your git username)
 
-    cd to the new directory and initialise a git repository here: 
+cd to the new directory and initialise a git repository here: 
+    
     $ git init
 
 Then:
@@ -66,11 +66,9 @@ Then:
 * Register your project with PyPI.
 * To encrypt your PyPI password in the Travis config:
 - Install travis following these instructions: https://github.com/travis-ci/travis.rb#installation
-- Create an api access token on github which as access to everything listed here:
-https://docs.travis-ci.com/user/github-oauth-scopes
+- Create an api access token on github which as access to everything listed here: https://docs.travis-ci.com/user/github-oauth-scopes
 - Run `travis login -—pro -—github-token=<your-token>`
-- Run the Travis CLI command `travis encrypt --add deploy.password --com <your-password>` to encrypt your PyPI password
-in Travis config and activate automated deployment on PyPI when you push a new tag to master branch.
+- Run the Travis CLI command `travis encrypt --add deploy.password --com <your-password>` to encrypt your PyPI password in the Travis config and activate automated deployment on PyPI when you push a new tag to master branch.
 * Add the repo to your `Read the Docs` account + turn on the Read the Docs service hook.
 
 * Release your package by pushing a new tag to master.
