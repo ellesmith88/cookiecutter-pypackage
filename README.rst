@@ -62,7 +62,7 @@ Then:
   Note: This should not be relied upon and ``flake8`` and ``black`` are tested in Travis-CI as part of this cookiecutter.
 * Add to the ``requirements.txt`` file that specifies the packages you will need for
   your project and their versions. .
-* Then follow the instructions on github to add your code to the empty git repository.
+* Then follow the instructions on github to add your code to the empty git repository (using the section **push an existing repository from the command line**).
 * Register your project with PyPI.
 * To encrypt your PyPI password in the Travis config:
 
