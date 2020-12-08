@@ -14,6 +14,12 @@ if __name__ == '__main__':
         remove_file('AUTHORS.rst')
         remove_file('docs/authors.rst')
 
+    if '{{ cookiecutter.add_travis_file }}' != 'y':
+        remove_file('.travis.yml')
+
+    if '{{ cookiecutter.create_author_file }}' != 'y':
+        remove_file('.gitlab-ci.yml')
+
     if 'no' in '{{ cookiecutter.command_line_interface|lower }}':
         cli_file = os.path.join('{{ cookiecutter.project_slug }}', 'cli.py')
         remove_file(cli_file)
