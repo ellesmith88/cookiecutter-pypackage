@@ -34,7 +34,6 @@ docs_requirements = [
 setup(
     author=__author__,
     author_email=__contact__,
-
     python_requires='>=3.6',
     setup_requires = ['setuptools_scm'],
     use_scm_version=True,
@@ -64,13 +63,6 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules'
     ],
     description="{{ cookiecutter.project_short_description }}",
-
-    license=__license__,
-
-    # This qualifier can be used to selectively exclude Python versions -
-    # in this case early Python 2 and 3 releases
-    python_requires='>=3.5.0',
-
     {%- if 'no' not in cookiecutter.command_line_interface|lower %}
     entry_points={
         'console_scripts': [
