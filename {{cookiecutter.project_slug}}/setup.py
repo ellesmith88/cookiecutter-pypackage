@@ -12,6 +12,8 @@ __license__ = "{{ cookiecutter.open_source_license }}"
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
+with open('HISTORY.rst') as history_file:
+    history = history_file.read()
 
 requirements = [line.strip() for line in open("requirements.txt")]
 
