@@ -17,7 +17,7 @@ if __name__ == '__main__':
     if '{{ cookiecutter.add_travis_file }}' != 'y':
         remove_file('.travis.yml')
 
-    if '{{ cookiecutter.create_author_file }}' != 'y':
+    if '{{ cookiecutter.add_gitlab_file }}' != 'y':
         remove_file('.gitlab-ci.yml')
 
     if 'no' in '{{ cookiecutter.command_line_interface|lower }}':
