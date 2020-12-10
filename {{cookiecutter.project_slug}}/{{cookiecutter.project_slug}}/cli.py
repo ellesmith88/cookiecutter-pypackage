@@ -22,6 +22,7 @@ def main(args=None):
     click.echo("See click documentation at https://click.palletsprojects.com/")
     return 0
 {%- endif %}
+
 {%- if cookiecutter.command_line_interface|lower == 'argparse' %}
 def main():
     """Console script for {{cookiecutter.project_slug}}."""
