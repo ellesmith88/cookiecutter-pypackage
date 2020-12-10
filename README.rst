@@ -79,6 +79,13 @@ Then:
 * Update your release notes on github.
 * Activate your project on ``pyup.io``.
 
+* If using the gitlab-ci option: To allow the ci to run 'shared runners' must be enabled.
+* To do this:
+
+    - On your project repo on gitlab go to settings-> CI/CD -> runner settings and enable shared runners.
+* The instructions for pushing the contents of the cookiecutter to your repo on gitlab will be the same as for github.
+
+
 .. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
 .. _Register: https://packaging.python.org/tutorials/packaging-projects/#uploading-the-distribution-archives
 
