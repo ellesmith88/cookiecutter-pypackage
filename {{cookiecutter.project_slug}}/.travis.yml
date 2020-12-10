@@ -8,23 +8,17 @@ jobs:
         - TOXENV=docs
         - READTHEDOCS=true
       name: "Documentation"
-      python: 3.6
+      python: 3.7
       addons:
         apt:
             packages:
                 - pandoc
     - env: TOXENV=black
       name: "Black and flake8 compliance"
-      python: 3.6
-    - env: TOXENV=py38
-      name: "Python3.8 (Linux)"
-      python: 3.8
+      python: 3.7
     - env: TOXENV=py37
       name: "Python3.7 (Linux)"
       python: 3.7
-    - env: TOXENV=py36
-      name: "Python3.6 (Linux)"
-      python: 3.6
 
 
 before_install:
@@ -36,11 +30,6 @@ install:
 
 script: tox -e $TOXENV
 
-{% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
-# Assuming you have installed the travis-ci CLI tool, after you
-# create the Github repo and add it to Travis, run the
-# following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password --com
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
@@ -52,5 +41,4 @@ deploy:
   on:
     tags: true
     repo: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
-    python: 3.8
-{%- endif %}
+    python: 3.7

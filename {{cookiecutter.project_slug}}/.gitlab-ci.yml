@@ -6,7 +6,7 @@ test:tox:
   image: python:3.7-slim
   before_script:
     - apt-get update
-    - apt-get install -y pandoc
+    - apt-get install -y pandoc git make
     - pip install --no-cache tox
   script:
     - tox
